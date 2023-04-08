@@ -1,4 +1,5 @@
-import { FC } from "react"
+import { Staker } from "@/components/Staker"
+
 
 
 export const StakeView = ({}) => {
@@ -11,6 +12,7 @@ export const StakeView = ({}) => {
         {/* CONTENT GOES HERE */}
         <div className="text-center">
           {/* <CreateNft /> */}
+          <Staker/>
         </div>
       </div>
     </div>
