@@ -16,7 +16,7 @@ const Borrow = (props) => {
         <meta name="description" content="Basic Functionality" />
       </Head>
       {!verified && <div className="flex flex-col items-center m-4">
-        <p>verify your credit eligiblity status below</p>
+        <p className="m-2">verify your credit eligiblity status below</p>
         <QRCode value={JSON.stringify(proofReq)} level="Q"
         style={{ width: 256 }} />
         {console.log(JSON.stringify(proofReq))}

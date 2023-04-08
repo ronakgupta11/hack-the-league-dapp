@@ -36,12 +36,12 @@ export const HomeView = ({}) => {
           </span>
         </h1>
         <h4 className="md:w-full text-center text-slate-300 my-2">
-          <p>Simply the fastest way to get started.</p>
-          Next.js, tailwind, wallet, web3.js, and more.
+          <p className="text-xl">Empowering You to Stake.</p>
+          <p className="text-xl">Earn, and Borrow with Confidence</p>
         </h4>
         <div className="max-w-md mx-auto mockup-code bg-primary p-6 my-2">
           <pre data-prefix=">">
-            <code className="truncate">Start building on Solana </code>
+            <code className="truncate h-48 ">Maximize Your Crypto's Potential </code>
           </pre>
         </div>
         
