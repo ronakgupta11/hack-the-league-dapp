@@ -18,8 +18,33 @@ import { configureChains, createClient, WagmiConfig } from 'wagmi';
 import { mainnet, polygon, optimism, arbitrum } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
+
+
+
+const c5ireChain = {
+  id: 997,
+  name: '5ireChain',
+  network: '5ireChain',
+  iconUrl: 'https://example.com/icon.svg',
+  iconBackground: '#fff',
+  nativeCurrency: {
+    decimals: 18,
+    name: '5ire',
+    symbol: '5ire',
+  },
+  rpcUrls: {
+    default: {
+      http: ['https://rpc-testnet.5ire.network'],
+    },
+  },
+  blockExplorers: {
+    default: { name: 'explorer', url: 'https://explorer.5ire.network' },
+    etherscan: { name: 'explorer', url: 'https://explorer.5ire.network' },
+  },
+  testnet: false,
+};
 const { chains, provider } = configureChains(
-  [mainnet, polygon, optimism, arbitrum],
+  [mainnet, polygon, optimism, arbitrum,c5ireChain],
   [
     alchemyProvider({ apiKey: process.env.ALCHEMY_ID }),
     publicProvider()
