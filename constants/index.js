@@ -88,13 +88,7 @@ export const abi = [
 		"type": "event"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "user",
-				"type": "address"
-			}
-		],
+		"inputs": [],
 		"name": "withdrawUser",
 		"outputs": [],
 		"stateMutability": "nonpayable",

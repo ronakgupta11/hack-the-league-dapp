@@ -4,7 +4,7 @@ contract Defi{
         address payable owner;
         uint id;
         uint TotalStake;
-// 0x897058DfB39113d0F4F1E5081f0C06721B7BDEd9s
+// 0x94Dba959a8F8B154e548AC4416884E6bF176E9D9
 
         constructor(){
             owner = payable(msg.sender);
