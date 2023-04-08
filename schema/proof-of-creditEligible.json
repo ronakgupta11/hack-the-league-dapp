@@ -3,8 +3,8 @@
     "type": "object",
     "$metadata": {
       "uris": {
-        "jsonLdContext": "https://raw.githubusercontent.com/ronakgupta11/PolygonID-Schema/main/proof-of-courseEnroll.jsonld",
-        "jsonSchema": "https://raw.githubusercontent.com/ronakgupta11/PolygonID-Schema/main/proof-of-courseEnroll.json"
+        "jsonLdContext": "https://raw.githubusercontent.com/ronakgupta11/hack-the-league-dapp/main/schema/proof-of-creditEligible.jsonld",
+        "jsonSchema": "https://raw.githubusercontent.com/ronakgupta11/hack-the-league-dapp/main/schema/proof-of-creditEligible.json"
       }
     },
     "required": [

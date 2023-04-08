@@ -6,13 +6,13 @@
         "id": "@id",
         "type": "@type",
         "ProofOfCreditEligiblity": {
-          "@id": "https://raw.githubusercontent.com/ronakgupta11/PolygonID-Schema/main/proof-of-courseEnroll.jsonld#ProofOfCourseEnroll",
+          "@id": "https://raw.githubusercontent.com/ronakgupta11/hack-the-league-dapp/main/schema/proof-of-creditEligible.jsonld#ProofOfCreditEligiblity",
           "@context": {
             "@version": 1.1,
             "@protected": true,
             "id": "@id",
             "type": "@type",
-            "vocab": "https://github.com/ronakgupta11/PolygonID-Schema/blob/main/proof-of-courseEnroll-vocab.md#",
+            "vocab": "https://raw.githubusercontent.com/ronakgupta11/hack-the-league-dapp/main/schema/proof-of-creditEligible-vocab.md#",
             "xsd": "http://www.w3.org/2001/XMLSchema#",
             "creditScore": {
               "@id": "vocab:creditScore",
