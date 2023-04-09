@@ -3,15 +3,16 @@ import { useState } from 'react'
 import { abi,address } from '@/constants'
 import { useContractRead } from 'wagmi'
 import { useContractWrite, usePrepareContractWrite, useSigner } from 'wagmi'
-import { parseUnits } from 'ethers/lib/utils.js'
+import { parseUnits,formatUnits } from 'ethers/lib/utils.js'
 import { useAccount } from 'wagmi'
-
+import { BigNumber } from 'ethers'
 
 export const AccountView = ({}) => {
-  const [myStake,setMyStake] = useState(0);
-  const [myBorrow,setMyBorrow] = useState(0);
+  const zero = BigNumber.from(0);
+
+  const [myStake,setMyStake] = useState(zero);
+  const [myBorrow,setMyBorrow] = useState(zero);
   const [amount,setAmount] = useState("0");
-  const [amountPay,setAmountPay] = useState("0");
   const account= useAccount()
 
 
@@ -45,7 +46,6 @@ export const AccountView = ({}) => {
     address: address,
     abi: abi,
     functionName: 'withdrawUser',
-    args:[account.address],
 
     
   });
@@ -54,12 +54,13 @@ export const AccountView = ({}) => {
     abi: abi,
     functionName: 'payEmi',
     args:[amount],
+    overrides: {
+      value: BigNumber.from(amount.toString()),
+    },
   });
-  function handleAmount(e){
-    setAmount(e.target.value)
-  }
+
   function handleAmountPay(e){
-    setAmountPay(e.target.value)
+    setAmount(e.target.value)
   }
   const withdrawUserFun  = useContractWrite(withdrawUserFunConfig.config);
   const payBorrowerFun  = useContractWrite(payBorrowerFunConfig.config);
@@ -73,8 +74,8 @@ export const AccountView = ({}) => {
         {/* CONTENT GOES HERE */}
         <div className="text-center flex flex-col items-center">
           {/* <FetchNft /> */}
-          <p className='m-2'>{`My Stake: ${myStake}`}</p>
-          <p className='m-2'>{`My Borrow: ${myBorrow}`}</p>
+          <p className='m-2'>{`My Stake: ${formatUnits(myStake.toString())}`}</p>
+          <p className='m-2'>{`My Borrow: ${formatUnits(myBorrow.toString())}`}</p>
             {/* <input onChange={handleAmount} ></input> */}
             <button className='btn btn-md rounded-btn m-2' disabled={!withdrawUserFun.write || withdrawUserFun.isLoading} onClick={() => {withdrawUserFun.write?.()}}>Withdraw</button>
             <input onChange={handleAmountPay} className="placeholder:italic m-2 text-black placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="text" ></input>

@@ -4,7 +4,8 @@ contract Defi{
         address payable owner;
         uint id;
         uint TotalStake;
-// 0x94Dba959a8F8B154e548AC4416884E6bF176E9D9
+        // 0x29E7691C3624eCa0Ca05263A36757D155bEDe23D
+
 
         constructor(){
             owner = payable(msg.sender);
@@ -27,7 +28,7 @@ contract Defi{
 
 
 
-    function Stake(uint _amount) external payable{
+    function Stake(uint _amount) public payable{
         id++;
         require(msg.value > 0, "Amount to stake must be greater than zero.");
         require(msg.value>=_amount,"sent amount is less than specified amount");
@@ -55,12 +56,17 @@ contract Defi{
     }
 
 
-    function withdrawUser(address user) external{
+    function withdrawUser() external{
         require(StakerToStake[msg.sender]>0,"not enough amount to withdraw");
-        TotalStake-= StakerToStake[msg.sender];
-        StakerToStake[msg.sender] = 0;
         
-        payable(user).transfer(StakerToStake[user]);
+        
+            TotalStake-=StakerToStake[msg.sender] ;
+            StakerToStake[msg.sender] = 0;
+            
+
+        (bool sent, ) = msg.sender.call{value: StakerToStake[msg.sender]}("");
+        require(sent, "Failed to send withdraw");
+        
         
         
 
@@ -70,9 +76,11 @@ contract Defi{
         require(_amount < TotalStake,"not enough amount available to borrow");
         TotalStake-=_amount;
         BorrowerToBorrow[msg.sender]+=_amount;
-        payable(msg.sender).transfer(_amount);
+        (bool sent, ) = msg.sender.call{value: _amount}("");
+        require(sent, "Failed to send Ether");
 
     }
+
     function payEmi(uint _amount) public payable {
         require(msg.value > 0, "Amount must be greater than zero.");
         require(msg.value>=_amount,"sent amount is less than specified amount");
@@ -84,6 +92,9 @@ contract Defi{
 
     }
 
+    receive() external payable{}
+
+    fallback() external payable{}
 
 
     

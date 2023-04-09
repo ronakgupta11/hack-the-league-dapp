@@ -88,11 +88,19 @@ export const abi = [
 		"type": "event"
 	},
 	{
+		"stateMutability": "payable",
+		"type": "fallback"
+	},
+	{
 		"inputs": [],
 		"name": "withdrawUser",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
+	},
+	{
+		"stateMutability": "payable",
+		"type": "receive"
 	},
 	{
 		"inputs": [
@@ -185,4 +193,4 @@ export const abi = [
 	}
 ]
 
-export const address = "0x897058DfB39113d0F4F1E5081f0C06721B7BDEd9"
+export const address = "0x29E7691C3624eCa0Ca05263A36757D155bEDe23D"
