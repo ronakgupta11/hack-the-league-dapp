@@ -8,7 +8,7 @@ import { QRCode } from 'react-qr-svg';
 import { proofReq } from "@/constants/proofRequest";
 
 const Borrow = (props) => {
-  const [verified,setVerified] = useState(false);
+  const [verified,setVerified] = useState(true);
   return (
     <div>
       <Head>
@@ -19,7 +19,7 @@ const Borrow = (props) => {
         <p className="m-2">verify your credit eligiblity status below</p>
         {/* <QRCode value={JSON.stringify(proofReq)} level="Q"
         style={{ width: 256 }} /> */}
-        <img src="" className="w-48 m-4"></img>
+        <img src="qrcode.png" className="w-80 m-4"></img>
         {console.log(JSON.stringify(proofReq))}
       </div>}
       {verified && <BorrowView />}
