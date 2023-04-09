@@ -8,13 +8,16 @@ import "https://github.com/0xPolygonID/tutorial-examples/blob/main/on-chain-veri
 
 contract Verifier is ZKPVerifier {
     uint64 public constant TRANSFER_REQUEST_ID = 1;
-    // 0xCDdD284e8523D2153CDac6f0722431691EE00B4b
+    // 0xeA0D144814Fdd5B6A6B0F89c72846A09Eb9c7346
 
     mapping(uint256 => address) public idToAddress;
     mapping(address => uint256) public addressToId;
     mapping(address => bool) public addressToVerified;
 
+    function getUserData(address user) public view returns(bool){
+        return addressToVerified[user];
 
+    }
 
 
     function _beforeProofSubmit(

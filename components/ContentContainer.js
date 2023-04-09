@@ -34,6 +34,11 @@ export const ContentContainer = (props) => {
               Account
             </Link>
           </li>
+          <li>
+            <Link href="/verify">
+              Verify
+            </Link>
+          </li>
         </ul>
       </div>
     </div>

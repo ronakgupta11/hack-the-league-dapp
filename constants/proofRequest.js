@@ -6,7 +6,7 @@ export const proofReq = {
     "body": {
         "reason": "credit verification",
         "transaction_data": {
-            "contract_address": "0xCDdD284e8523D2153CDac6f0722431691EE00B4b",
+            "contract_address": "0xeA0D144814Fdd5B6A6B0F89c72846A09Eb9c7346",
             "method_id": "b68967e2",
             "chain_id": 80001,
             "network": "polygon-mumbai"

@@ -57,7 +57,7 @@ export const Footer  = () => {
                             target="_blank"
                             className="text-white text-base font-bold hover:text-primary-dark transition-all duration-200"
                         >
-                            5ire & PolygonID
+                            5ire, ApyHub & PolygonID
                         </a>
                     </div>
                 </div>

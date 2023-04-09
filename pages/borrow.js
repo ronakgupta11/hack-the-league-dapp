@@ -2,13 +2,31 @@
 import Head from "next/head"
 import { BorrowView } from "../views"
 import { useState } from "react"
+import { abi,address } from '@/constants'
+import { useContractRead } from 'wagmi'
+import { useAccount } from 'wagmi'
+
 
 
 // import { QRCode } from 'react-qr-svg';
 import { proofReq } from "@/constants/proofRequest";
 
 const Borrow = (props) => {
+  const account= useAccount()
+
+  const readData= useContractRead({
+    address: address,
+    abi: abi,
+    functionName: 'viewTotalStake',
+    onSuccess(data) {
+        console.log('Success', data)
+        // {_hex: '0x00', _isBigNumber: true}
+        setTotalStake(data);
+      },
+  })
+
   const [verified,setVerified] = useState(false);
+
   return (
     <div>
       <Head>
