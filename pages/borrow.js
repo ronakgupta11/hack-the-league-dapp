@@ -4,7 +4,7 @@ import { BorrowView } from "../views"
 import { useState } from "react"
 
 
-import { QRCode } from 'react-qr-svg';
+// import { QRCode } from 'react-qr-svg';
 import { proofReq } from "@/constants/proofRequest";
 
 const Borrow = (props) => {
