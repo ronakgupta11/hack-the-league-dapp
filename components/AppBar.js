@@ -104,6 +104,9 @@ export const AppBar  = (props) => {
             <Link href="/borrow" className="btn btn-ghost btn-sm rounded-btn">
               Borrow
             </Link>
+            <Link href="/verify" className="btn btn-ghost btn-sm rounded-btn">
+              Get Verified
+            </Link>
             <Link href="/account" className="btn btn-ghost btn-sm rounded-btn">
               Account
             </Link>

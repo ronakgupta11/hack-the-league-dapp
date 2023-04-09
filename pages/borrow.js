@@ -8,7 +8,7 @@ import { useState } from "react"
 import { proofReq } from "@/constants/proofRequest";
 
 const Borrow = (props) => {
-  const [verified,setVerified] = useState(true);
+  const [verified,setVerified] = useState(false);
   return (
     <div>
       <Head>
