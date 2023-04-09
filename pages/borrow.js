@@ -16,7 +16,7 @@ const Borrow = (props) => {
 
 
 
-  const [verified,setVerified] = useState(true);
+  const [verified,setVerified] = useState(false);
 
   return (
     <div>
