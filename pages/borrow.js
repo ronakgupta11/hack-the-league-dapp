@@ -14,18 +14,9 @@ import { proofReq } from "@/constants/proofRequest";
 const Borrow = (props) => {
   const account= useAccount()
 
-  const readData= useContractRead({
-    address: address,
-    abi: abi,
-    functionName: 'viewTotalStake',
-    onSuccess(data) {
-        console.log('Success', data)
-        // {_hex: '0x00', _isBigNumber: true}
-        setTotalStake(data);
-      },
-  })
 
-  const [verified,setVerified] = useState(false);
+
+  const [verified,setVerified] = useState(true);
 
   return (
     <div>

@@ -6,7 +6,7 @@ const Home = (props) => {
   return (
     <div>
       <Head>
-        <title>5ireXPay</title>
+        <title>5ire X Defi</title>
         <meta
           name="description"
           content="payments App"
