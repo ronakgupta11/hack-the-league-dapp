@@ -23,6 +23,7 @@ export default function Verify(){
         const data = await response.json();
         // console.log("status:",data);
         setData(data.status);
+        return(data.status);
       }
 
     function handleEmail(e){
@@ -31,14 +32,17 @@ export default function Verify(){
     function handlePan(e){
         setPan(e.target.value);
     }
-    function routeLink(){
-        handleClick()
-        if(data){
+    async function routeLink(){
+        const res = await handleClick();
+        if(res){
         router.push("https://issuer-demo.polygonid.me/")}
         else{
             router.push("/NotEligible")
         }
 
+    }
+    function routePan(){
+        router.push("/NotEligible")
     }
 
   return (
@@ -56,7 +60,7 @@ export default function Verify(){
         <div className=' flex flex-col items-center m-4'>
 
       <input onChange={handlePan} className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 m-2 text-black rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="text" placeholder='Enter Pan Number'></input>
-      <button className='btn btn-ms rounded-btn m-2' onClick={routeLink}>Verify Pan</button>
+      <button className='btn btn-ms rounded-btn m-2' onClick={routePan}>Verify Pan</button>
         </div>
       </div>
     </div>
