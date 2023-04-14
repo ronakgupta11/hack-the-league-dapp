@@ -7,7 +7,7 @@ export default async function handler(req, res) {
               headers: {
                 'apy-token': 'APY00unTPLCvl40R3QGYXgR9Wll2lELRlMhUsAtfJsUveaPKW3n0Y1dZBCWjIMbKDixWLrd49firCn',
                 'Content-Type': 'application/json',
-                "Access-Control-Allow-Origin": "*"
+                
               },
               
               data:{email:req.body.email}

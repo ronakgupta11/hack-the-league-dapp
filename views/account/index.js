@@ -84,7 +84,7 @@ export const AccountView = ({}) => {
         <div className='text-white'>
           Successfully Withdrawn your Ammount 
           <div>
-            <a href={`https://explorer.5ire.network/evm/tx/${withdrawUserFun.data?.hash}`}>View On 5ire Explorer</a>
+            <a href={`https://testnet-zkevm.polygonscan.com/tx/${withdrawUserFun.data?.hash}`}>View On zkEVM Explorer</a>
           </div>
         </div>
       )}
@@ -92,7 +92,7 @@ export const AccountView = ({}) => {
         <div className='text-white'>
           Successfully Paid your Ammount 
           <div>
-            <a href={`https://explorer.5ire.network/evm/tx/${payBorrowerFun.data?.hash}`}>View On 5ire Explorer</a>
+            <a href={`https://testnet-zkevm.polygonscan.com/tx/${payBorrowerFun.data?.hash}`}>View On zkEVM Explorer</a>
           </div>
         </div>
       )}

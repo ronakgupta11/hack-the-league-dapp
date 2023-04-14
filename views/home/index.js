@@ -30,7 +30,7 @@ export const HomeView = ({}) => {
     <div className="md:hero mx-auto p-4">
       <div className="md:hero-content flex flex-col">
         <h1 className="text-center text-5xl md:pl-12 font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14F195]">
-        5ire X Defi
+        Poly X Defi
           <span className="text-sm font-normal align-top text-slate-700">
             v
           </span>

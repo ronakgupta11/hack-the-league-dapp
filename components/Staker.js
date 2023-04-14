@@ -55,7 +55,7 @@ export const Staker = () => {
         <div className='text-white'>
           Successfully Staked your Amount
           <div>
-            <a href={`https://explorer.5ire.network/evm/tx/${data?.hash}`}>View On 5ire Explorer</a>
+            <a href={`https://testnet-zkevm.polygonscan.com/tx/${data?.hash}`}>View On zkEVM Explorer</a>
           </div>
         </div>
       )}

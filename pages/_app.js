@@ -43,8 +43,30 @@ const c5ireChain = {
   },
   testnet: false,
 };
+const zkEVMChain = {
+  id: 1442,
+  name: 'zkEVM',
+  network: 'zkEVM',
+  iconUrl: 'https://example.com/icon.svg',
+  iconBackground: '#fff',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'ETH',
+    symbol: 'ETH',
+  },
+  rpcUrls: {
+    default: {
+      http: [' https://rpc.public.zkevm-test.net'],
+    },
+  },
+  blockExplorers: {
+    default: { name: 'explorer', url: 'https://testnet-zkevm.polygonscan.com' },
+    etherscan: { name: 'explorer', url: 'https://testnet-zkevm.polygonscan.com' },
+  },
+  testnet: false,
+};
 const { chains, provider } = configureChains(
-  [mainnet, polygon, optimism, arbitrum,c5ireChain,polygonMumbai],
+  [mainnet, polygon, optimism, arbitrum,c5ireChain,polygonMumbai,zkEVMChain],
   [
     alchemyProvider({ apiKey: process.env.ALCHEMY_ID }),
     publicProvider()

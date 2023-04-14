@@ -39,7 +39,7 @@ export const BorrowView = ({}) => {
         <div className='text-white'>
           Successfully Borrowed your Ammount 
           <div>
-            <a href={`https://explorer.5ire.network/evm/tx/${borrowFun.data?.hash}`}>View On 5ire Explorer</a>
+            <a href={`https://testnet-zkevm.polygonscan.com/tx/${borrowFun.data?.hash}`}>View On zkEVM Explorer</a>
           </div>
         </div>
       )}
